@@ -1,0 +1,1039 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+/* spiner-container */
+
+.container {
+    display: none;
+}
+
+.display .container {
+    display: block;
+}
+
+.spinner-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #262626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s;
+    z-index: 300;
+}
+
+.display .spinner-container {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.circles {
+    position: relative;
+    width: 8rem;
+    height: 8rem;
+}
+
+.circles div::after {
+    content: "";
+    position: absolute;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+}
+
+.circles div:nth-child(1)::after {
+    top: 6.3rem;
+    left: 6.3rem;
+    background-color: #c29525;
+}
+
+.circles div:nth-child(2)::after {
+    top: 6.8rem;
+    left: 5.6rem;
+    background-color: #c29525;
+}
+
+.circles div:nth-child(3)::after {
+    top: 7.1rem;
+    left: 4.8rem;
+    background-color: #c29525;
+}
+
+.circles div:nth-child(4)::after {
+    top: 7.2rem;
+    left: 4.0rem;
+    background-color: #c29525;
+}
+
+.circles div:nth-child(5)::after {
+    top: 7.1rem;
+    left: 3.2rem;
+    background-color: #c29525;
+}
+
+.circles div:nth-child(6)::after {
+    top: 6.8rem;
+    left: 2.4rem;
+    background-color: #c29525;
+}
+
+.circles div:nth-child(7)::after {
+    top: 6.3rem;
+    left: 1.7rem;
+    background-color: #c29525;
+}
+
+.circles div:nth-child(8) {
+    top: 5.2rem;
+    left: 1.2rem;
+    background-color: #c29525;
+}
+
+.circles div {
+    animation: circles 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+
+    transform-origin: 4rem 4rem;
+}
+
+@keyframes circles {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.circles div:nth-child(1) {
+    animation-delay: -0.036s;
+}
+
+.circles div:nth-child(2) {
+    animation-delay: -0.072s;
+}
+
+.circles div:nth-child(3) {
+    animation-delay: -0.108s;
+}
+
+.circles div:nth-child(4) {
+    animation-delay: -0.144s;
+}
+
+.circles div:nth-child(5) {
+    animation-delay: -0.18s;
+}
+
+.circles div:nth-child(6) {
+    animation-delay: -0.216s;
+}
+
+.circles div:nth-child(7) {
+    animation-delay: -0.252s;
+}
+
+.circles div:nth-child(8) {
+    animation-delay: -0.288s;
+}
+
+
+/*section header (home*/
+sectipn.header {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    perspective: 100rem;
+}
+
+div.img-wrapper {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(9, 0, 0, 0.9);
+    overflow: hidden;
+}
+
+div.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    animation: show 25s;
+}
+
+@keyframes show {
+    from {
+        transform: scale(1.4);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+div.banner {
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    overflow: hidden;
+}
+
+div.banner h1 {
+    font-family: "Baloo Da 2", sans serif;
+    font-size: 8rem;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: 0.2rem;
+    text-shadow: 0.3rem 0.5rem rgba(0, 0, 0, 0.4);
+    width: 60%;
+    line-height: 9rem;
+    opacity: 0;
+    animation: movebanner 1s 0.5s forwards;
+}
+
+.banner p {
+    color: #fff;
+    font-family: "Josefin slab", serif;
+    font-size: 4rem;
+    letter-spacing: 0.08rem;
+    text-shadow: 0.3rem 0.5rem rgba(0, 0, 0, 0.4);
+    width: 55%;
+    margin: 1rem 0 3rem 0;
+    opacity: 0;
+    animation: movebanner 1s 0.7s forwards;
+}
+
+.banner button {
+    width: 25rem;
+    height: 7rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: #fff;
+    background-color: #c29525;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Mulish', serif;
+    font-size: 2.5rem;
+    text-shadow: 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0.3rem 0.5rem rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    opacity: 0;
+    transition: background-color 0.5s ease-in-out;
+    animation: movebanner 1s 0.9s forwards;
+}
+
+@keyframes movebanner {
+    from {
+        transform: translateY(40rem) rotateY(-50deg);
+    }
+
+    to {
+        transform: translateY(0rem) rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+.banner button:hover {
+    background-color: #e9be52;
+}
+
+/*hamburger-menu*/ 
+.hamburger-menu {
+    width: 3rem;
+    height: 3rem;
+    position: fixed;
+    top: 5rem;
+    right: 5rem;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+.line {
+    width: 100%;
+    height: 0.2rem;
+    background-color: #fff;
+    box-shadow: 0.3rem 0.2rem rgba(0, 0, 0, 0.8);
+}
+
+.change .hamburger-menu {
+    right: 33rem;
+}
+
+.change .line-1 {
+    transform: rotate(45deg) translate(0.3rem, 0.8rem);
+}
+
+.change .line-2 {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.change .line-3 {
+    transform: rotate(-45deg) translate(0rem, -0.7rem);
+}
+
+.hamburger-menu span {
+    position: absolute;
+    left: 5rem;
+    width: 10rem;
+    height: 4rem;
+    background-color: #e2b646;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: "Baloo Da 2", serif;
+    font-size: 1.6rem;
+    border-radius: 5px;
+    letter-spacing: 0.1rem;
+    visibility: none;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.hamburger-menu span::before {
+    position: absolute;
+    content: "";
+    border-right: 1rem solid #e2b646;
+    border-top: 1rem solid transparent;
+    border-bottom: 1rem solid transparent;
+    border-left: 1rem solid transparent;
+    left: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.change .hamburger-menu:hover span {
+    visibility: visible;
+    opacity: 1;
+}
+
+.sidebar {
+    width: 40rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -40rem;
+    background-color: #fff;
+    transition: right 0.5s ease-in-out;
+    z-index: 100;
+}
+
+.change .sidebar {
+    right: 0;
+}
+
+ul.menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+li.menu-item {
+    text-align: center;
+}
+
+.menu li a {
+    font-family: "Baloo Da 2", serif;
+    font-size: 4rem;
+    color: #555;
+    position: relative;
+}
+
+.menu li a::before {
+    position: absolute;
+    content: attr(data-content);
+    color: #c29925;
+    top: 0;
+    left: 0;
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: width 0.7s ease-in-out;
+}
+
+.menu li a:hover::before {
+    width: 100%;
+}
+
+.social-media {
+    position: absolute;
+    bottom: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.social-media i {
+    font-size: 2.2rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    margin: 3rem;
+    color: #fff;
+    background-color: #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.social-media i:hover {
+    background-color: #c29925;
+}
+
+/*ABOUT US section*/
+section.about-us {
+    width: 100%;
+    background-color: #f5f5f5;
+    padding-bottom: 15rem;
+}
+
+div.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 7rem 0 10rem 0;
+}
+
+h1.section-heading {
+    font-family: "Muli", serif;
+    font-size: 5rem;
+    font-weight: 300px;
+    color: #4b4b4b;
+    margin-bottom: 5rem;
+}
+
+div.underline {
+    width: 12rem;
+    height: 0.3rem;
+    background-color: #c29525;
+}
+
+div.services {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(6, 9rem);
+    grid-row-gap: 4rem;
+}
+
+div.service {
+    width: 100%;
+    cursor: pointer;
+    background-color: transparent;
+    margin-bottom: 2rem;
+}
+
+div.service:nth-child(1) {
+    grid-column: 4/7;
+    grid-row: 1/3;
+}
+
+div.service:nth-child(2) {
+    grid-column: 2/5;
+    grid-row: 3/5;
+}
+
+div.service:nth-child(3) {
+    grid-column: 4/7;
+    grid-row: 5/-1;
+}
+
+div.service:nth-child(4) {
+    grid-column: 11/14;
+    grid-row: 1/3;
+}
+
+div.service:nth-child(5) {
+    grid-column: 13/16;
+    grid-row: 3/5;
+}
+
+div.service:nth-child(6) {
+    grid-column: 11/14;
+    grid-row: 5/-1;
+}
+
+div.about-us-img-wrapper {
+    grid-column: 7/11;
+    grid-row: 3/5;
+    width: 100%;
+}
+
+div.about-us-img-wrapper img {
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+div.service-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+div.service-header i {
+    font-size: 4rem;
+    color: #4b4b4b;
+    margin-right: 2rem;
+    transition: all 0.5s ease-in-out;
+}
+
+div.service-header i:hover {
+    color: #e2b646;
+}
+
+div.service-header h3 {
+    font-family: "Baloo Da 2", serif;
+    font-size: 2.6rem;
+    line-height: 2.6rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+p.service-text {
+    font-family: "Josefin Slab", serif;
+    font-size: 1.6rem;
+    text-align: justify;
+}
+
+/* --- OUR TEAM --- */
+section.team {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5rem 20rem 5rem;
+}
+
+.cards-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.card {
+    width: 37rem;
+    height: 45rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.8);
+    border-radius: 0.5rem;
+    margin: 1.5rem;
+    position: relative;
+    transition: all 0.5s;
+}
+
+.card-img-wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: #262626;
+    border-radius: 0.5rem;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.card-info {
+    position: absolute;
+    color: #fff;
+    left: 5%;
+    bottom: 0;
+    opacity: 0;
+    visibility: hoidden;
+    padding: 2rem;
+    transition: all 0.8s;
+}
+
+.card:hover .card-info {
+    visibility: visible;
+    opacity: 1;
+    bottom: 1rem;
+}
+
+.card:hover img {
+    opacity: 0.5;
+}
+
+.card-info h2 {
+    font-family: "Baloo Da 2", serif;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    font-weight: 300;
+    color: #eee;
+    text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+.card-info h3 {
+    font-family: "Mulish", serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #e52e2e;
+    margin-bottom: 1rem;
+}
+
+.card-info p {
+    font-family: "Baloo Da 2", serif;
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+    color: #eee;
+    width: 80%;
+    margin-bottom: 2rem;
+}
+
+.card-info button {
+    width: 10rem;
+    height: 3rem;
+    background-color: #c29525;
+    border: none;
+    font-family: "Baloo Da 2", serif;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    color: #eee;
+    border-radius: 0.5rem;
+    box-shadow: 0.1rem 0.8rem rgba(0, 0, 0, 0.4);
+}
+
+/* --contact */
+section.contact {
+    width: 100%;
+    height: 100vh;
+    background-color: #272727;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.contact-wrapper {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3rem 7rem rgba(0, 0, 0, 0.5);
+}
+
+.contact-left {
+    width: 35%;
+    height: 100%;
+    background: linear-gradient(rgba(15, 15, 15, 0.6), rgba(22, 22, 22, 0.9)),
+        url("/Architect_website/img/contact-bg.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.contact-right {
+    width: 65%;
+    height: 100%;
+    background-color: #eee;
+    padding: 3rem 10rem 10rem 10rem;
+    margin-top: 2rem;
+}
+
+h1.contact-heading {
+    font-family: "Baloo Da 2", serif;
+    font-size: 6rem;
+    font-weight: 300;
+    color: #272727;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.contact-right form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.input-group {
+    position: relative;
+}
+
+.field {
+    width: 45rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.2rem dashed #636363;
+    margin: 3rem 0;
+    padding: 1rem 1rem 1rem 0;
+    font-family: "Muli", serif;
+    font-size: 1.6rem;
+    color: #4b4b4b;
+    height: 4rem;
+    transition: all 0.3s;
+}
+
+.field:focus {
+    border-bottom-style: solid;
+}
+
+.field:focus~label {
+    transform: translateY(-3rem);
+    font-size: 1.2rem;
+}
+
+.input-group textarea {
+    max-width: 45rem;
+    max-height: 7rem;
+}
+
+.field:focus {
+    border-bottom-style: solid;
+}
+
+.input-group label {
+    position: absolute;
+    left: 0;
+    font-family: "Baloo Da 2", serif;
+    font-size: 1.8rem;
+    color: #4b4b4b;
+    text-transform: uppercase;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+
+.input-label {
+    bottom: 3rem;
+}
+
+input.submit-btn {
+    width: 45rem;
+    height: 5rem;
+    background-color: #c29525;
+    color: #fff;
+    border: none;
+    margin-top: 2rem;
+    font-family: "Muli", serif;
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+    text-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+    transition: background-color 0.5s ease-in-out;
+}
+
+input.submit-btn:hover {
+    background-color: #e9be52;
+}
+
+/* --FOOTER --*/
+footer {
+    width: 100%;
+    height: 15rem;
+    background-color: #17181b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content p {
+    font-family: "Baloo Da 2", serif;
+    font-size: 1.6rem;
+    color: #a7a7a7;
+}
+
+.social-list {
+    display: flex;
+}
+
+.social-list a {
+    margin: 0 2rem;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.5s ease-in-out;
+}
+
+.social-list a:hover {
+    background-color: #e9be52;
+}
+
+.social-list i {
+    font-size: 2rem;
+    color: #a7a7a7;
+}
+
+/* THE SCROLL BUTTON*/
+.scroll-btn {
+    position: fixed;
+    right: 5rem;
+    bottom: 5rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: #e2b646;
+    border-radius: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #fff;
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+/* --responsive */
+@media only screen and (max-width: 1500px) {
+    .card {
+        width: 34rem;
+    }
+
+    .container-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .footer-content {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    div.banner h1 {
+        font-size: 6rem;
+        line-height: 7rem;
+    }
+
+    div.banner p {
+        font-size: 3rem;
+    }
+
+    div.banner button {
+        height: 5rem;
+        font-size: 1.5rem;
+    }
+
+    .menu li a {
+        font-size: 3rem;
+    }
+} 
+
+@media only screen and (max-width: 1300px) {
+    .team {
+        padding-bottom: 5rem;
+    }
+
+    .card {
+        margin-bottom: 8rem;
+    }
+
+    .contact-wrapper {
+        width: 90%;
+        height: 56rem;
+    }
+
+    .contact-heading {
+        margin-bottom: 2rem;
+    }
+
+    .field {
+        margin: 3rem 3rem;
+        width: 38rem;
+    }
+
+    input.submit-btn {
+        width: 38trm;
+    }
+
+    input-group textarea {
+        width: 38rem;
+    }
+}
+
+@media only screen and (max-width: 1180px) {
+    .cards-wrapper {
+        flex-direction: column;
+        align-items: center;
+            margin-top: 4rem;
+        }
+    
+    .card {
+        margin-bottom: 8rem;
+    }
+    div.services {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    div.service {
+        width: 40rem;
+        margin-bottom: 6rem;
+    }
+    div.about-us-img-wrapper {
+        width: 40rem;
+    }
+    div.about-us-img-wrapper img {
+        width: 100%;
+    }
+        .field {
+            width: 30rem;
+        }
+    
+        input.submit-btn {
+            width: 30rem;
+        }
+    
+        .input-group textarea {
+            max-width: 30rem;
+        }
+        form {
+            padding: 2rem;
+        }
+}
+
+@media only screen and (max-width: 887px) {
+    div.banner h1 {
+        font-size: 5rem;
+        line-height: 6rem;
+    }
+    div.banner p {
+        font-size: 2.5rem;
+    }
+    div.banner button {
+        width: 18rem;
+    }
+    .contact-left{
+        width: 0;
+    }
+    .contact-right{
+        width: 100%;
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 80%;
+    }
+    .copyright {
+        order: 1;
+        margin-top: 3rem;
+    }
+}
+
+@media only screen and (max-width: 670px) {
+    div.banner h1 {
+        font-size: 4rem;
+        line-height: 5rem;
+    }
+    div.banner p {
+        font-size:2rem;
+    }
+}
+
+@media only screen and (max-width: 570px) {
+html {
+    font-size: 45%;
+}
+.sidebar {
+    width: 100%;
+    height: 100%;
+    right: -100%;
+}
+.change .hamburger-menu {
+    left: 5rem;
+}
+
+.menu li.menu-item{
+    margin-bottom: 4rem;
+}
+
+.menu li.menu-item a.menu-link{
+    margin-bottom: 2rem;
+}
+
+.service {
+    width: 30rem;
+}
+.contact-right {
+    padding-top:20rem;
+}
+.footer {
+    height: 18rem;
+}
+}
+
+@media only screen and (max-width: 416px) {
+.contact-right {
+    position: relative;
+}
+
+h1.contact-heading {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+form {
+margin-top: 20rem;
+}
+.field {
+    width: 25rem;
+}
+    
+input.submit-btn {
+    width: 25rem;
+}
+    
+.input-group textarea {
+    max-width: 25rem;
+        }
+}
+
+@media only screen and (max-width: 377px) {
+.field {
+    width: 20rem;
+    }
+    
+input.submit-btn {
+    width: 20rem;
+        }
+    
+.input-group textarea {
+    max-width: 20rem;
+        }  
+
+    }
